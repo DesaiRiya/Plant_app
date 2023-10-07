@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-6/home.dart';
+import 'package:myapp/page-6/home2.dart';
 import 'package:myapp/utils.dart';
 
 class diagnose_plant extends StatelessWidget {
@@ -10,7 +12,8 @@ class diagnose_plant extends StatelessWidget {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return Scaffold(
+      body: Container(
       width: double.infinity,
       child: Container(
         // diagnoseplantwzy (28:68)
@@ -122,9 +125,11 @@ class diagnose_plant extends StatelessWidget {
                 ],
               ),
             ),
-            TextButton(
+            /*TextButton(
               // autogroupsgyqaCh (6JPsZVN4NLrC73rVWSsgYq)
-              onPressed: () {},
+              onPressed: () {
+                //Navigator.push(context,MaterialPageRoute(builder: (context)=>homee()));
+              },
               style: TextButton.styleFrom (
                 padding: EdgeInsets.zero,
               ),
@@ -205,9 +210,10 @@ class diagnose_plant extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
+            ),*/
           ],
         ),
+      ),
       ),
           );
   }

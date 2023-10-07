@@ -4,14 +4,15 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class proflie extends StatelessWidget {
+class profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
-      width: double.infinity,
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
       child: Container(
         // profilevj3 (32:123)
         width: double.infinity,
@@ -244,7 +245,7 @@ class proflie extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
+                  /*Container(
                     // autogroupd4nmGXK (6JPuDmvxQp3KzJbehSd4NM)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 0*fem),
                     padding: EdgeInsets.fromLTRB(30*fem, 11*fem, 22*fem, 8*fem),
@@ -331,12 +332,13 @@ class proflie extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
+                  ),*/
                 ],
               ),
             ),
           ],
         ),
+      ),
       ),
           );
   }

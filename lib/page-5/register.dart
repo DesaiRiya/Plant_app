@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-6/home.dart';
 import 'package:myapp/utils.dart';
 
+import '../page-6/home2.dart';
+
 class register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class register extends StatelessWidget {
       body: Container(
         height :height,
         width : width,
+
       //width: double.infinity,
       child: Container(
         // registerMdK (10:211)
@@ -198,7 +201,7 @@ class register extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(7*fem, 0*fem, 4*fem, 0*fem),
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>home()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>homee()));
                 },
                 style: TextButton.styleFrom (
                   padding: EdgeInsets.zero,

@@ -15,12 +15,12 @@ class home extends StatefulWidget {
 class _homeState extends State<home> {
 
 
-  int currentIndex =0;
+  int myIndex =0;
   final  pages = [
     home(),
     search(),
     diagnose_plant(),
-    proflie(),
+    profile(),
 
   ];
 
@@ -45,7 +45,9 @@ class _homeState extends State<home> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
-      body:pages[currentIndex],
+     // body:pages[currentIndex],
+
+
       appBar: AppBar(
         title: Text('Plant care app',
           style: SafeGoogleFont (
@@ -67,9 +69,9 @@ class _homeState extends State<home> {
                   color: Color(0xff42652f) ),),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) => setState(() => currentIndex = index),
-        currentIndex: currentIndex,
+      /*bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) => setState(() => myIndex = index),
+        currentIndex: myIndex,
 
 
 
@@ -94,7 +96,7 @@ class _homeState extends State<home> {
             width: 25,)),
 
           BottomNavigationBarItem(label: 'profile',icon: Icon(Icons.account_circle)),
-        ],),
+        ],),*/
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -201,7 +203,9 @@ class _homeState extends State<home> {
                           // rectangle6f7F (19:9)
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 29*fem, 0*fem),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>search()));
+                            },
                             style: TextButton.styleFrom (
                               padding: EdgeInsets.zero,
                             ),
@@ -219,7 +223,9 @@ class _homeState extends State<home> {
                           // rectangle7LUH (19:10)
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 30*fem, 0*fem),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>diagnose_plant()));
+                            },
                             style: TextButton.styleFrom (
                               padding: EdgeInsets.zero,
                             ),
