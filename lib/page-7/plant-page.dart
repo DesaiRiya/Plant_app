@@ -4,13 +4,14 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Scene extends StatelessWidget {
+class plant_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return Scaffold(
+      body: Container(
       width: double.infinity,
       child: Container(
         // plantpageg9P (20:41)
@@ -93,7 +94,9 @@ class Scene extends StatelessWidget {
                     // primarybuttonVeZ (24:56)
                     margin: EdgeInsets.fromLTRB(46.5*fem, 0*fem, 46*fem, 23*fem),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        //Navigator.push(context,MaterialPageRoute(builder: (context)=>xyz()));
+                      },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
                       ),
@@ -126,12 +129,13 @@ class Scene extends StatelessWidget {
                     // carecultivationtipsWZf (28:67)
                     child: Container(
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 135.5*fem, 18*fem),
+                      width: 700*ffem/fem,
                       child: Text(
                         'CARE & CULTIVATION TIPS ',
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Lato',
-                          fontSize: 19*ffem,
+                          fontSize: 16*ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2*ffem/fem,
                           color: Color(0xff42652f),
@@ -228,7 +232,7 @@ class Scene extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
+            /*Container(
               // autogrouperhtGDP (6JPrMXNdzt4miFpS3PeRhT)
               padding: EdgeInsets.fromLTRB(24*fem, 11*fem, 27*fem, 8*fem),
               width: double.infinity,
@@ -313,9 +317,10 @@ class Scene extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
+            ),*/
           ],
         ),
+      ),
       ),
           );
   }

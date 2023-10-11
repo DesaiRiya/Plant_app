@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-2/search.dart';
 import 'package:myapp/page-3/diagnose-plant.dart';
 import 'package:myapp/page-3/profile.dart';
+import 'package:myapp/page-7/plant-page.dart';
 import 'package:myapp/utils.dart';
 
 class home extends StatefulWidget {
@@ -204,7 +205,7 @@ class _homeState extends State<home> {
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 29*fem, 0*fem),
                           child: TextButton(
                             onPressed: () {
-                              Navigator.push(context,MaterialPageRoute(builder: (context)=>search()));
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>plant_page()));
                             },
                             style: TextButton.styleFrom (
                               padding: EdgeInsets.zero,

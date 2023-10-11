@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-4/login-.dart';
+import 'package:myapp/page-4/login3.dart';
 import 'package:myapp/utils.dart';
 
 import '../page-4/login2.dart';
@@ -67,7 +68,7 @@ class Scene extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(0*fem, 10*fem, 58*fem, 0*fem),
               child: TextButton(
                 onPressed: () {
-                 Navigator.push(context,MaterialPageRoute(builder: (context)=>login2()));
+                 Navigator.push(context,MaterialPageRoute(builder: (context)=>login3()));
                 },
                 style: TextButton.styleFrom (
                   padding: EdgeInsets.zero,

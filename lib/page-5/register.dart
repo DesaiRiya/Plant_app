@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/controllers/signup_controller.dart';
 import 'package:myapp/page-6/home.dart';
 import 'package:myapp/utils.dart';
-
+import 'package:get/get.dart';
 import '../page-6/home2.dart';
 
 class register extends StatelessWidget {
@@ -15,6 +16,11 @@ class register extends StatelessWidget {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width /baseWidth;
     double ffem = fem * 0.97;
+
+    final controller = Get.put(SignUpController());
+    final _formKey = GlobalKey<FormState>();
+
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
@@ -22,7 +28,11 @@ class register extends StatelessWidget {
         width : width,
 
       //width: double.infinity,
-      child: Container(
+
+      child: Form(
+        key: _formKey,
+
+        child: Container(
         // registerMdK (10:211)
         padding: EdgeInsets.fromLTRB(19*fem, 95*fem, 16*fem, 79*fem),
         width: double.infinity,
@@ -75,6 +85,7 @@ class register extends StatelessWidget {
                 ),
               ),
               child: TextField(
+                controller: controller.fullname,
                 decoration: InputDecoration (
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
@@ -109,6 +120,7 @@ class register extends StatelessWidget {
                 ),
               ),
               child: TextField(
+                controller: controller.email,
                 decoration: InputDecoration (
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
@@ -143,6 +155,7 @@ class register extends StatelessWidget {
                 ),
               ),
               child: TextField(
+                controller: controller.password,
                 obscureText: true,
                 decoration: InputDecoration (
                   border: InputBorder.none,
@@ -153,6 +166,8 @@ class register extends StatelessWidget {
                   contentPadding: EdgeInsets.fromLTRB(11*fem, 9.5*fem, 12*fem, 9.5*fem),
                   hintText: 'Password',
                   hintStyle: TextStyle(color:Color(0xf9646962)),
+                  suffixIcon: Icon(Icons.remove_red_eye_sharp,
+                      color: Color(0xff42652f)),
                 ),
                 style: SafeGoogleFont (
                   'Laila',
@@ -176,6 +191,7 @@ class register extends StatelessWidget {
                 ),
               ),
               child: TextField(
+                controller: controller.confirm,
                 obscureText: true,
                 decoration: InputDecoration (
                   border: InputBorder.none,
@@ -186,6 +202,8 @@ class register extends StatelessWidget {
                   contentPadding: EdgeInsets.fromLTRB(9*fem, 9.5*fem, 10.05*fem, 9.5*fem),
                   hintText: 'Confirm Password',
                   hintStyle: TextStyle(color:Color(0xf9646962)),
+                  suffixIcon: Icon(Icons.remove_red_eye_sharp,
+                      color: Color(0xff42652f)),
                 ),
                 style: SafeGoogleFont (
                   'Laila',
@@ -201,7 +219,10 @@ class register extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(7*fem, 0*fem, 4*fem, 0*fem),
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>homee()));
+                  if(_formKey.currentState!.validate()){
+                    SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+                  }
+                  //Navigator.push(context,MaterialPageRoute(builder: (context)=>homee()));
                 },
                 style: TextButton.styleFrom (
                   padding: EdgeInsets.zero,
@@ -233,6 +254,7 @@ class register extends StatelessWidget {
             ),
           ],
         ),
+      ),
       ),
       ),
           );

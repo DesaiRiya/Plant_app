@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/repository/authentication_repository/authentication_repository.dart';
 import 'package:myapp/utils.dart';
+
 
 class profile extends StatelessWidget {
   @override
@@ -11,6 +13,29 @@ class profile extends StatelessWidget {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
+
+      appBar: AppBar(
+        title: Text('Plant care app',
+          style: SafeGoogleFont (
+            'Lemon',
+            fontSize: 15*ffem,
+            fontWeight: FontWeight.w400,
+            height: 1.3075*ffem/fem,
+            color: Color(0xf92b501e),
+          ), ),
+        elevation: 10,
+        backgroundColor: Color(0xfff5f5f5),
+        leading: Container(
+          padding: EdgeInsets.all(5),
+          child: Image.asset('assets/page-1/images/ellipse-1-bg.png'),
+        ),
+        actions: [
+          IconButton(onPressed: () {},
+            icon: Icon(Icons.more_vert,
+                color: Color(0xff42652f) ),),
+        ],
+      ),
+
       body: Container(
         width: double.infinity,
       child: Container(
@@ -22,7 +47,7 @@ class profile extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
+            /*Container(
               // autogroupyekh4KT (6JPtc8HgxQjA3c21aZYEkh)
               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 23*fem),
               padding: EdgeInsets.fromLTRB(8*fem, 4*fem, 15.93*fem, 4*fem),
@@ -74,10 +99,10 @@ class profile extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
+            ),*/
             Container(
               // ellipse5eS5 (32:130)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 19.5*fem),
+              margin: EdgeInsets.fromLTRB(0*fem, 10*fem, 1*fem, 19.5*fem),
               width: 103*fem,
               height: 86*fem,
               child: Image.asset(
@@ -218,7 +243,9 @@ class profile extends StatelessWidget {
                     // autogroupj8do2cy (6JPu7XcN8Pu8VLhgTdj8Do)
                     margin: EdgeInsets.fromLTRB(22*fem, 0*fem, 24*fem, 27*fem),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        AuthenticationRepository.instance.logout();
+                      },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
                       ),
